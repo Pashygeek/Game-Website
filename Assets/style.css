@@ -190,6 +190,13 @@
     }
 }
 
+/* Search section */
+.search_container {
+    background-color: grey;
+    color: black;
+    padding: 20px;
+}
+
 /* Hero Section */
 .hero {
     background: #0000;
