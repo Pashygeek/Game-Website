@@ -15,31 +15,43 @@ const API_URL = 'https://www.cheapshark.com/api/1.0/games?ids=128%2C129%2C130';
 const gamesWrapper = document.querySelector('.games_wrapper');
 const fetchGamesBtn = document.querySelector('#fetch-games-btn');
 const searchBtn = document.querySelector('#search-btn');
-const searchInput = ('#search-input');
+const searchInput = document.querySelector('#search-input');
 
 let gamesArray = [];
 
 fetchGamesBtn.addEventListener('click', () => {
   fetch(API_URL)
-  .then(response => response.json())
-  .then(data => {
-    // console.log(data); // add this line for debugging
-    gamesWrapper.innerHTML = ''; // clear existing games
-    const gamesArray = Object.values(data);
-    console.log(gamesArray)
-    gamesArray.forEach(game => {
-      console.log(game)
-      const gameCard = document.createElement('div');
-      gameCard.classList.add('games_card');
+    .then(response => response.json())
+    .then(data => {
+      gamesWrapper.innerHTML = ''; // clear existing games
+      gamesArray = Object.values(data);
+      displayGames(gamesArray);
+    })
+    .catch(error => console.error(error));
+});
 
-      const gameImage = document.createElement('img');
-      gameImage.src = game.info.thumb;
-      gameImage.alt = game.info.title;
+searchBtn.addEventListener('click', () => {
+  const searchTerm = searchInput.value.toLowerCase();
+  const filteredGames = gamesArray.filter(game => {
+    return game.info.title.toLowerCase().includes(searchTerm);
+  });
+  displayGames(filteredGames);
+});
 
-      const gameTitle = document.createElement('h2');
-      gameTitle.textContent = game.info.title;
+function displayGames(games) {
+  gamesWrapper.innerHTML = '';
+  games.forEach(game => {
+    const gameCard = document.createElement('div');
+    gameCard.classList.add('games_card');
 
-      const gamePrice = document.createElement('p');
+    const gameImage = document.createElement('img');
+    gameImage.src = game.info.thumb;
+    gameImage.alt = game.info.title;
+
+    const gameTitle = document.createElement('h2');
+    gameTitle.textContent = game.info.title;
+
+    const gamePrice = document.createElement('p');
       gamePrice.textContent = `Price: USD ${game.cheapestPriceEver.price}`;
 
       const likeButton = document.createElement('button');
@@ -55,15 +67,6 @@ fetchGamesBtn.addEventListener('click', () => {
       dislikeButton.addEventListener('click', () => {
         alert(`You disliked ${game.info.title}👎!`);
       });
-      
-      searchBtn.addEventListener('click', () => {
-        const searchTerm = searchInput.gameTitle.toLowerCase();
-        const filteredGames = gamesArray.filter(game => {
-          return game.info.title.toLowerCase().includes(searchTerm);
-        });
-        displayGames(filteredGames);
-      });
-
 
       gameCard.appendChild(gameImage);
       gameCard.appendChild(gameTitle);
@@ -73,9 +76,7 @@ fetchGamesBtn.addEventListener('click', () => {
 
       gamesWrapper.appendChild(gameCard);
     });
-  })
-  .catch(error => console.error(error));
-});
+    
+  };
 
-
-
+// Tester
