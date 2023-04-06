@@ -462,14 +462,13 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    margin-top: 1rem;
     background: url('https://wallpaperaccess.com/full/1670947.jpg');
 }
 
 .games_container {
-    /* width: 100%; */
+    width: 100%;
     height: 200%;
-    padding: 40px;
+    padding: 30px;
     display: absolute;
   }
 
@@ -477,8 +476,9 @@
     text-align: center;
   }
   
-  .games h1 {
+  h1 {
     font-size: 2.5rem;
+    text-decoration: underline #ed1a52;
     background: url('https://i.pinimg.com/736x/75/cf/3f/75cf3f91365a91bd323c607b911a532b--backgrounds-hd-desktop-wallpapers.jpg');
     text-align: center;
     margin-bottom: 1rem;
@@ -495,7 +495,7 @@
     width: 400px;
     height: 500px;
     padding: 30px;
-    border: 1px solid #131313;
+    border: 1px solid rgb(72, 32, 72);
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
@@ -547,6 +547,8 @@
     background-color: #c62828;
   }
   
+
+
   
 
 /* PC requirements */
