@@ -63,3 +63,5 @@ fetchGamesBtn.addEventListener('click', () => {
   })
   .catch(error => console.error(error));
 });
+
+// Creating the search
