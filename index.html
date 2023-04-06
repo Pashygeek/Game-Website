@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCADE WORLD</title>
+    <link rel="stylesheet" href="./Assets/style.css">
+</head>
+
+<body>
+
+    <!-- NavBar Section -->
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="#home" id="navbar_logo">ARCADE WORLD</a>
+            <div class="navbar_toggle" id="Games-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="#home" class="navbar_links" id="home-page">Home</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#about" class="navbar_links" id="about-page">About</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#game" class="navbar_links" id="game-page">Games</a>
+                </li>
+                <li class="navbar_btn">
+                    <a href="#Sign-up" class="button" id="Buy Games">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Search Section -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for a game...">
+        <button type="search-btn">Search</button>
+
+    </div>
+    
+    
+
+    <!-- Hero section -->
+    <div class="hero" id="home">
+        <div class="hero_container">
+            <h1 class="hero_heading">Choose Your<span> Games</span></h1>
+            <p class="hero_description">A Gamers World</p>
+            <button class="main_btn"><a href="#about">Explore</a></button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="main" id="about">
+        <div class="main_container">
+            <div class="main_img_container">
+                <div class="main_img-card"></div>
+            </div>
+            <div class="main_content">
+                <h1>What do we do?</h1>
+                <h2>We sell games online at a cheaper price</h2>
+                <p>What are you waiting for buy an exciting game now at an affordable price!!</p>
+                <button class="main_btn"><a href="#game">Buy Games Now</a></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Games Available -->
+    <h1>Games Available</h1>   
+    <div class="games" id="game">
+        <div class="games_wrapper">
+            <div class="games_container">
+                <div class="gameImage" id="game.thumb">
+                    <div class="gameTitle" id="game.Title">
+                       <div class="gamePrice" id="game.Price"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PC Requirements -->
+    <div class="PC-requirements" id="game-requirements">
+        <div class="game" id="Requirements">
+            <div class="game_container">
+                <div class="game_img_container">
+                    <div class="game_img-card"></div>
+                </div>
+                <div class="game_content">
+                    <h1>PC Requirements</h1>
+                    <h2>Can I run my game smoothly on my PC?</h2>
+                    <p>To ensure you can run your game smoothly without any lag check the PC requirements, to run the
+                        games, below: </p>
+                    <ul>
+                        <li>Operating system: Windows 10</li>
+                        <li>Processor: Intel Core i5 or better</li>
+                        <li>Memory: 4GB RAM(Minimum)</li>
+                        <li>Graphics: NVIDIA GeForce GTX 970 or better</li>
+                        <li>Storage: 50GB available space</li>
+                    </ul>
+                    <button class="game_btn"><a href="#game">Check games</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Assets/index.js"></script>
+</body>
+
+</html>
