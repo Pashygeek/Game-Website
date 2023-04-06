@@ -14,6 +14,8 @@ menu.addEventListener('click', gameMenu);
 const API_URL = 'https://www.cheapshark.com/api/1.0/games?ids=128%2C129%2C130';
 const gamesWrapper = document.querySelector('.games_wrapper');
 const fetchGamesBtn = document.querySelector('#fetch-games-btn');
+const searchInput = document.querySelector('#search-input');
+const searchButton = document.querySelector('#search-button')
 
 fetchGamesBtn.addEventListener('click', () => {
   fetch(API_URL)
@@ -44,6 +46,23 @@ fetchGamesBtn.addEventListener('click', () => {
       likeButton.addEventListener('click', () => {
         alert(`You liked ${game.info.title}!👍`);
       });
+      
+       const filterGames = (games, searchTerm) => {
+        return games.filter(game => {
+          const title = game.info.title.toLowerCase();
+          return title.includes(searchTerm.toLowerCase());
+        });
+       }
+       
+       searchButton.addEventListener('click', ()=> {
+        const searchTerm = searchInput.value.trim
+       }
+       )
+
+
+
+
+
 
       const dislikeButton = document.createElement('button');
       dislikeButton.classList.add('dislike_button');
@@ -64,4 +83,4 @@ fetchGamesBtn.addEventListener('click', () => {
   .catch(error => console.error(error));
 });
 
-// Creating the search
+
