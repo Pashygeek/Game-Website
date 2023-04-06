@@ -478,7 +478,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    background: url('https://wallpaperaccess.com/full/1670947.jpg');
+    background: url('https://marketplace.canva.com/EAFKBKTKE0k/1/0/1600w/canva-retro-astronaut-simple-minimalist-desktop-wallpaper-BY9c16sBnxE.jpg');
 }
 
 .games_container {
@@ -492,15 +492,19 @@ body {
     text-align: center;
   }
   
-  h1 {
-    font-size: 4rem;
-    text-decoration: underline #ed1a52;
+  .games h1 {
+    font-size: 5rem;
+    text-decoration: underline #9114ff;
     text-align: center;
     align-items: center;
     justify-content: center;
-    color:#ed1a52;
     margin: 2rem;
-    background: #131313;
+    background: linear-gradient(to right, #da22ff, #9114ff);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
   }
 
   .games_card {
