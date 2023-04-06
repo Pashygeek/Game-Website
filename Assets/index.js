@@ -17,6 +17,7 @@ const API_URL = 'https://www.cheapshark.com/api/1.0/games?ids=128%2C129%2C130';
 const gamesWrapper = document.querySelector('.games_wrapper');
 const searchBtn = document.querySelector('#search-btn');
 const searchInput = document.querySelector('#search-input');
+const searchResult = document.querySelector('#search-result');
 
 let gamesArray = [];
 
@@ -34,8 +35,38 @@ searchBtn.addEventListener('click', () => {
   const filteredGames = gamesArray.filter(game => {
     return game.info.title.toLowerCase().includes(searchTerm);
   });
+  
+
+  //display search result
+  if(filteredGames.length > 0) {
+    const searchGame = filteredGames[0];
+    const gameContainer = document.createElement('div');
+    gameContainer.classList.add('game_container');
+
+    const gameIcon = document.createElement('img');
+    gameIcon.src = searchGame.info.thumb;
+    gameIcon.alt = searchGame.info.title;
+
+    const gameTitle = document.createElement('h3');
+    gameTitle.textContent = searchGame.info.title;
+
+    gameContainer.appendChild(gameIcon);
+    gameContainer.appendChild(gameTitle);
+
+    searchResult.innerHTML = '';
+    searchResult.appendChild(gameContainer);
+    searchResult.style.display = 'none';
+  }
+
   displayGames(filteredGames);
-});
+
+  if(searchTerm) {
+    searchIcon.classList.add('show');
+  } else {
+    searchIcon.classList.remove('show');
+  }
+  });
+
 
 function displayGames(games) {
   gamesWrapper.innerHTML = '';

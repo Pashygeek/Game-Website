@@ -222,29 +222,42 @@ body {
     font-size: 16px;
   }
   
-  .search-results {
+  #search-result {
+    display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 50px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+  }
+
+  #search-result img {
     width: 100%;
-    background-color: #f1f1f1;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .search-container {
+    position: relative;
+  }
+
+  .search-container .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
     display: none;
   }
-  
-  .search-results li {
-    padding: 12px 20px;
-    border-bottom: 1px solid #ddd;
-    font-size: 16px;
-    cursor: pointer;
+
+  .search-container .search-icon.show {
+    display: block;
   }
-  
-  .search-results li:last-child {
-    border-bottom: none;
-  }
-  
+
+
+
 /* Hero Section */
 .hero {
     background: #0000;
