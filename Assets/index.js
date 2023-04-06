@@ -14,6 +14,10 @@ menu.addEventListener('click', gameMenu);
 const API_URL = 'https://www.cheapshark.com/api/1.0/games?ids=128%2C129%2C130';
 const gamesWrapper = document.querySelector('.games_wrapper');
 const fetchGamesBtn = document.querySelector('#fetch-games-btn');
+const searchBtn = document.querySelector('#search-btn');
+const searchInput = ('#search-input');
+
+let gamesArray = [];
 
 fetchGamesBtn.addEventListener('click', () => {
   fetch(API_URL)
@@ -51,6 +55,15 @@ fetchGamesBtn.addEventListener('click', () => {
       dislikeButton.addEventListener('click', () => {
         alert(`You disliked ${game.info.title}👎!`);
       });
+      
+      searchBtn.addEventListener('click', () => {
+        const searchTerm = searchInput.gameTitle.toLowerCase();
+        const filteredGames = gamesArray.filter(game => {
+          return game.info.title.toLowerCase().includes(searchTerm);
+        });
+        displayGames(filteredGames);
+      });
+
 
       gameCard.appendChild(gameImage);
       gameCard.appendChild(gameTitle);
@@ -63,5 +76,6 @@ fetchGamesBtn.addEventListener('click', () => {
   })
   .catch(error => console.error(error));
 });
+
 
 
