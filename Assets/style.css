@@ -5,6 +5,9 @@
     font-family: 'Times New Roman', Times, serif;
     scroll-behavior: smooth;
 }
+body {
+    background-color: #131313;
+}
 
 .navbar {
     background: black;
@@ -467,8 +470,8 @@
 
 .games_container {
     width: 100%;
-    height: 200%;
-    padding: 30px;
+    height: 300%;
+    padding: 50px;
     display: absolute;
   }
 
@@ -477,14 +480,14 @@
   }
   
   h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
     text-decoration: underline #ed1a52;
-    background: url('');
     text-align: center;
     align-items: center;
     justify-content: center;
     color:#ed1a52;
-    margin: 2rem auto;
+    margin: 2rem;
+    background: #131313;
   }
 
   .games_card {
